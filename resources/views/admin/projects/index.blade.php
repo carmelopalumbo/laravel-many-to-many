@@ -11,7 +11,7 @@
                 </div>
 
 
-                <table class="table table-striped w-75 m-auto">
+                <table class="table table-striped m-auto px-5">
                     <thead>
                         <tr>
                             <th scope="col">
@@ -20,7 +20,10 @@
                             </th>
                             <th scope="col">
                                 <a class="{{ $direction === 'desc' ? 'desc' : 'asc' }}"
-                                    href="{{ route('admin.orderby', ['client_name', $direction]) }}">NOME CLIENT</a>
+                                    href="{{ route('admin.orderby', ['client_name', $direction]) }}">CLIENTE</a>
+                            </th>
+                            <th scope="col">
+                                TAGS
                             </th>
                             <th scope="col">AZIONI</th>
                         </tr>
@@ -32,6 +35,11 @@
                                         class="badge text-bg-dark ms-2">{{ $project->type?->name }}</span>
                                 </td>
                                 <td>{{ $project->client_name }}</td>
+                                <td>
+                                    @foreach ($project->technologies as $technology)
+                                        <span class="badge rounded-pill text-bg-info">{{ $technology->name }}</span>
+                                    @endforeach
+                                </td>
                                 <td>
                                     <a class="btn btn-info" href="{{ route('admin.projects.show', $project) }}"><i
                                             class="fa-regular fa-eye"></i></a>
@@ -45,6 +53,9 @@
                         <tr>
                             <td class="fw-bold">
                                 Nessun progetto trovato.
+                            </td>
+                            <td class="fw-bold">
+                                N/D
                             </td>
                             <td class="fw-bold">
                                 N/D
