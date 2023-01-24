@@ -47,7 +47,11 @@
 
                     <div class="py-2 ps-3">
                         @foreach ($technologies as $technology)
-                            <input id="{{ $technology->slug }}" type="checkbox">
+                            <input id="{{ $technology->slug }}" type="checkbox" name="technologies[]"
+                                value="{{ $technology->id }}"
+                                @if (!$errors->all() && $project->technologies->contains($technology)) checked
+                                @elseif($errors->all() && in_array($technology->id, old('technologies', [])))
+                                checked @endif>
                             <label class="pe-3 ps-1 fw-bold" for="{{ $technology->slug }}">{{ $technology->name }}</label>
                         @endforeach
                     </div>

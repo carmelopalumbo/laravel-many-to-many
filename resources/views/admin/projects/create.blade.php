@@ -48,7 +48,8 @@
 
                     <div class="py-2 ps-3">
                         @foreach ($technologies as $technology)
-                            <input id="{{ $technology->slug }}" type="checkbox">
+                            <input id="{{ $technology->slug }}" type="checkbox" name="technologies[]"
+                                value="{{ $technology->id }}" @if (in_array($technology->id, old('technologies', []))) checked @endif>
                             <label class="pe-3 ps-1 fw-bold" for="{{ $technology->slug }}">{{ $technology->name }}</label>
                         @endforeach
                     </div>
@@ -83,7 +84,7 @@
                         @enderror
                     </div>
 
-                    <div class="links d-flex justify-content-center pt-2">
+                    <div class="links d-flex justify-content-center py-2">
                         <a class="btn btn-danger" href="{{ route('admin.projects.index') }}">ANNULLA</a>
                         <button type="submit" class="btn btn-success mx-3">AGGIUNGI</button>
                     </div>

@@ -65,6 +65,8 @@ class ProjectController extends Controller
      */
     public function store(ProjectRequest $request)
     {
+        //dd($request->all());
+
         $form_data = $request->all();
         //dd($form_data['cover_image']);
         $form_data['slug'] = Project::generateSlug($form_data['name']);
@@ -80,6 +82,10 @@ class ProjectController extends Controller
 
         //forma compatta del fill e save
         $new_project = Project::create($form_data);
+
+        if (array_key_exists('technologies', $form_data)) {
+            $new_project->technologies()->attach($form_data['technologies']);
+        }
 
         return redirect(route('admin.projects.index'))->with('create', "<strong>$new_project->name</strong> aggiunto al database.");
     }
@@ -138,6 +144,14 @@ class ProjectController extends Controller
         }
 
         $project->update($form_data);
+
+        if (array_key_exists('technologies', $form_data)) {
+            //sync aggiunge ed elimina i record
+            $project->technologies()->sync($form_data['technologies']);
+        } else {
+            //elimina tutte le relazioni se arriva un array vuoto
+            $project->technologies()->detach();
+        }
 
         return redirect(route('admin.projects.index'))->with('edit', "<strong>$project->name</strong> aggiornato con successo.");
     }
