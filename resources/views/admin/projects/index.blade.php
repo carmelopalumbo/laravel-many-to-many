@@ -36,9 +36,11 @@
                                 </td>
                                 <td>{{ $project->client_name }}</td>
                                 <td>
-                                    @foreach ($project->technologies as $technology)
+                                    @forelse ($project->technologies as $technology)
                                         <span class="badge rounded-pill text-bg-info">{{ $technology->name }}</span>
-                                    @endforeach
+                                    @empty
+                                        <span class="ps-2">N.D.</span>
+                                    @endforelse
                                 </td>
                                 <td>
                                     <a class="btn btn-info" href="{{ route('admin.projects.show', $project) }}"><i
