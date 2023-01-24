@@ -21,7 +21,7 @@
             <a class="{{ Route::currentRouteName() === 'admin.projects.ordertypes' ? 'active' : 'notactive' }}"
                 href="{{ route('admin.projects.ordertypes') }}">
                 <i class="fa-brands fa-laravel fs-6 pe-2"></i>
-                <span>LINGUAGGI</span>
+                <span>CATEGORIE</span>
             </a>
         </div>
 

@@ -12,7 +12,7 @@
                     @csrf
 
                     <div class="mb-3">
-                        <label for="name" class="form-label">NOME PROGETTO</label>
+                        <label for="name" class="form-label category">NOME PROGETTO</label>
                         <input type="text" value="{{ old('name') }}" name="name"
                             class="form-control @error('name') is-invalid @enderror" id="name"
                             placeholder="Nome progetto . . . ">
@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="client_name" class="form-label">NOME CLIENT</label>
+                        <label for="client_name" class="form-label category">CLIENTE</label>
                         <input type="text" value="{{ old('client_name') }}" name="client_name"
                             class="form-control @error('client_name') is-invalid @enderror" id="client_name"
                             placeholder="Nome client utilizzato per il progetto . . . ">
@@ -35,10 +35,10 @@
                         @enderror
                     </div>
 
-                    <div class="pb-3">
-                        <label for="type" class="form-label">LINGUAGGIO</label>
+                    <div class="pb-1">
+                        <label for="type" class="form-label category">TIPO PROGETTO</label>
                         <select id="type" name='type_id' class="form-select" aria-label="Default select example">
-                            <option value="">Seleziona un linguaggio o framework . . .</option>
+                            <option value="">Seleziona tipo progetto . . .</option>
                             @foreach ($types as $type)
                                 <option @if ($type->id == old('type_id')) selected @endif value="{{ $type->id }}">
                                     {{ $type->name }}</option>
@@ -46,10 +46,18 @@
                         </select>
                     </div>
 
+                    <div class="py-2 ps-3">
+                        @foreach ($technologies as $technology)
+                            <input id="{{ $technology->slug }}" type="checkbox">
+                            <label class="pe-3 ps-1 fw-bold" for="{{ $technology->slug }}">{{ $technology->name }}</label>
+                        @endforeach
+                    </div>
+
+
 
                     <div class="d-flex justify-content-between">
                         <div class="mb-3 w-75">
-                            <label for="cover_image" class="form-label">COPERTINA</label>
+                            <label for="cover_image" class="form-label category">COPERTINA</label>
                             <input onchange="showImage(event)" type="file" name="cover_image"
                                 class="form-control @error('cover_image') is-invalid @enderror" id="cover_image">
                             @error('cover_image')
@@ -65,7 +73,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="summary" class="form-label">SOMMARIO</label>
+                        <label for="summary" class="form-label category">SOMMARIO</label>
                         <textarea id="editor" class="form-control @error('summary') is-invalid @enderror" name="summary" id="summary"
                             placeholder="Punti salienti del progetto . . ." rows="3">{{ old('summary') }}</textarea>
                         @error('summary')

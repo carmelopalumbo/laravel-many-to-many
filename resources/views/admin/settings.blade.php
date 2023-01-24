@@ -9,7 +9,7 @@
                 <div class="setting-card">
                     <a href="{{ route('admin.types.index') }}">
                         <i class="fa-brands fa-codepen"></i>
-                        GESTISCI LINGUAGGI
+                        GESTISCI CATEGORIE
                     </a>
                 </div>
 

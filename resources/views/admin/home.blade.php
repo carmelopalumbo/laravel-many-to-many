@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="cp-card">
-                        <h3>LINGUAGGI E FRAMEWORK SALVATI NEL DB</h3>
+                        <h3>CATEGORIE PROGETTI NEL DB</h3>
                         <p>{{ $types }}</p>
                     </div>
                 </div>
