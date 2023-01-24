@@ -1,0 +1,230 @@
+.admin{
+    header{
+        height: 68px;
+    }
+
+    .col-10{
+        height: 100vh;
+        overflow-y: auto;
+    }
+
+    .option-box{
+        height: 100vh;
+    }
+
+    aside{
+        .links{
+            a{
+                text-decoration: none;
+                color: white;
+            }
+            div{
+                padding: 40px 0;
+            }
+        }
+
+        .notactive{
+            transition: .3s all;
+            padding: 7px 9px;
+            border-radius: 3px;
+            &:hover{
+                background-color: #C52133;
+            }
+        }
+
+        .active{
+            color: #C52133 !important;
+            -webkit-text-stroke: .3px white;
+        }
+    }
+
+    table{
+        border: 1px solid black;
+        a{
+            text-decoration: none;
+            color: black;
+            transition: .3s all;
+            &:hover{
+                color: #C52133;
+            }
+        }
+        .asc{
+            &::after{
+                content: '\25B2';
+                font-size: .6rem;
+                color: #C52133;
+                padding-left: 7px;
+            }
+        }
+        .desc{
+            &::after{
+                content: '\25BC';
+                font-size: .6rem;
+                color: #C52133;
+                padding-left: 7px;
+            }
+        }
+    }
+
+    .thumb{
+        width: 20rem;
+        margin: 10px auto;
+    }
+
+    .my-logo{
+        width: 55px;
+    }
+
+    .pag-box{
+        margin-top: 10px;
+        .pagination{
+            .page-item{
+                margin: 0 4px;
+                &.active .page-link{
+                    background-color: #C52133 !important;
+                }
+                .page-link{
+                    border: none;
+                    background-color: #212529;
+                    color: white;
+                    font-weight: bold;
+                    border-radius: 10px;
+                    font-size: .9rem;
+                }
+            }
+        }
+    }
+
+    form{
+        label{
+            font-size: .85rem;
+            font-weight: bold;
+            padding-left: 7px;
+        }
+    }
+
+    .error-message{
+        color: red;
+        font-size: .8rem;
+        font-style: italic;
+        padding-left: 7px;
+        padding-top: 6px;
+    }
+
+    .arrow{
+        text-decoration: none;
+        color: #212529;
+        font-size: 3.5rem;
+        padding-left: 20px;
+        transition: .2s all;
+        &:hover{
+            transform: scale(.85);
+        }
+    }
+
+    .welcome{
+        -webkit-text-stroke: 1px #C52133;
+    }
+
+    .info-cards{
+        .cp-card{
+            border: 3px solid #C52133;
+            border-radius: 7px;
+            text-align: center;
+            width: 250px;
+            height: 110px;
+            padding: 7px 0;
+            cursor: pointer;
+            transition: .3s all;
+            h3{
+                font-size: 1.15rem;
+                font-weight: bold;
+            }
+            p{
+                color: #C52133;
+                font-style: italic;
+                font-size: 1.1rem;
+            }
+            &:hover{
+                transform: scale(1.08);
+            }
+        }
+
+    }
+
+    .socials{
+        padding-top: 170px;
+        i{
+            margin: 0 25px;
+            padding: 12px;
+            border-radius: 50%;
+            font-size: 2rem;
+            color: white;
+            background-color: #C52133;
+            transition: .2s all;
+            &:hover{
+                background-color: lighten(#C52133, 10%);
+            }
+        }
+    }
+
+    .cp-search{
+        input{
+            width: 550px !important;
+            background-color: #212529;
+            border-color: #C52133;
+            &:focus{
+                background-color: #212529;
+                border-color: #C52133;
+                color: white;
+                font-style: italic;
+                box-shadow: none;
+            }
+
+            &::placeholder{
+                color: grey;
+                font-style: italic;
+            }
+        }
+        button{
+            border-color: #C52133;
+            color: #C52133;
+            font-weight: bold;
+        }
+    }
+
+    h5{
+        -webkit-text-stroke: 1px #C52133;
+    }
+
+    .ck-editor__editable[role="textbox"] {
+        /* editing area */
+        height: 100px;
+    }
+
+    .type-box{
+        height: 300px;
+        width: 300px;
+        border: 2px solid #C52133;
+        border-radius: 5px;
+        overflow-y: auto;
+        margin: 20px;
+        padding: 7px 0;
+        ul{
+            list-style:decimal;
+            li{
+                padding: 7px;
+                a{
+                    text-decoration: none;
+                    color: #212529;
+                    font-style: italic;
+                    transition: .2s all;
+                    &:hover{
+                        color: #C52133;
+                    }
+                }
+            }
+        }
+    }
+
+}
