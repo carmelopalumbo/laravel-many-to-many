@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\TechnologyController;
 use App\Http\Controllers\Admin\TypeController;
 use App\Http\Controllers\Guest\PageController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Technology;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +35,7 @@ Route::middleware(['auth', 'verified'])
         Route::get('projects/orderby/{column}/{direction}', [ProjectController::class, 'orderby'])->name('orderby');
         Route::get('ordertypes', [ProjectController::class, 'ordertypes'])->name('projects.ordertypes');
         Route::resource('types', TypeController::class)->except(['show', 'create', 'edit']);
+        Route::resource('technologies', TechnologyController::class)->except(['show', 'create', 'edit']);
     });
 
 require __DIR__ . '/auth.php';

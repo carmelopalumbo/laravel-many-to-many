@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Type;
+use App\Models\Technology;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class TypeController extends Controller
+class TechnologyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class TypeController extends Controller
      */
     public function index()
     {
-        $types = Type::orderBy('id', 'desc')->paginate(5);
-        return view('admin.types.index', compact('types'));
+        $technologies = Technology::orderBy('id', 'desc')->paginate(5);
+        return view('admin.technologies.index', compact('technologies'));
     }
 
     /**
@@ -35,9 +35,9 @@ class TypeController extends Controller
         $form_data['slug'] = Str::slug($form_data['name']);
         $name = $form_data['name'];
 
-        Type::create($form_data);
+        Technology::create($form_data);
 
-        return redirect()->back()->with('create', "Tipo progetto <strong> $name </strong> aggiunto correttamente al DB.");
+        return redirect()->back()->with('create', "Tecnologia <strong> $name </strong> aggiunta correttamente al DB.");
     }
 
     /**
@@ -47,7 +47,7 @@ class TypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Type $type)
+    public function update(Request $request, Technology $technology)
     {
         $form_data = $request->validate([
             'name' => 'required|unique:types|min:2'
@@ -55,9 +55,9 @@ class TypeController extends Controller
 
         $form_data['slug'] = Str::slug($form_data['name']);
 
-        $type->update($form_data);
+        $technology->update($form_data);
 
-        return redirect()->back()->with('update', "Tipo progetto <strong>$request->name</strong> aggiornato correttamente.");
+        return redirect()->back()->with('update', "Tecnologia <strong>$request->name</strong> aggiornata correttamente.");
     }
 
     /**
@@ -66,10 +66,10 @@ class TypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Type $type)
+    public function destroy(Technology $technology)
     {
-        $type->delete();
+        $technology->delete();
 
-        return redirect()->back()->with('delete', "Tipo progetto <strong>$type->name</strong> eliminato dal db.");
+        return redirect()->back()->with('delete', "Tecnologia <strong>$technology->name</strong> eliminata dal db.");
     }
 }

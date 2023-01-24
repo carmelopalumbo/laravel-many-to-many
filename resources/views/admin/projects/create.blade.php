@@ -85,8 +85,8 @@
                     </div>
 
                     <div class="links d-flex justify-content-center py-2">
-                        <a class="btn btn-danger" href="{{ route('admin.projects.index') }}">ANNULLA</a>
-                        <button type="submit" class="btn btn-success mx-3">AGGIUNGI</button>
+                        <a class="btn btn-danger fw-bold" href="{{ route('admin.projects.index') }}">ANNULLA</a>
+                        <button type="submit" class="btn btn-success mx-3 fw-bold">AGGIUNGI</button>
                     </div>
 
                 </form>

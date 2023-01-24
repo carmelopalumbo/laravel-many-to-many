@@ -85,8 +85,8 @@
                         @enderror
                     </div>
                     <div class="links d-flex justify-content-center pt-2">
-                        <a class="btn btn-danger" href="{{ route('admin.projects.index') }}">ANNULLA</a>
-                        <button type="submit" class="btn btn-success mx-3">MODIFICA</button>
+                        <a class="btn btn-danger fw-bold" href="{{ route('admin.projects.index') }}">ANNULLA</a>
+                        <button type="submit" class="btn btn-success mx-3 fw-bold">MODIFICA</button>
                     </div>
                 </form>
             </div>

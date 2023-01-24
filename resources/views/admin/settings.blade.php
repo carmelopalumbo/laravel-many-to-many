@@ -14,9 +14,9 @@
                 </div>
 
                 <div class="setting-card">
-                    <a href="">
-                        <i class="fa-solid fa-tag"></i>
-                        GESTISCI TAGS
+                    <a href="{{ route('admin.technologies.index') }}">
+                        <i class="fa-brands fa-html5"></i>
+                        GESTISCI TECNOLOGIE
                     </a>
                 </div>
 

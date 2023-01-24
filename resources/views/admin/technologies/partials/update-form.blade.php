@@ -1,8 +1,8 @@
-<form action="{{ route('admin.types.update', $type) }}" method="POST">
+<form action="{{ route('admin.technologies.update', $technology) }}" method="POST">
     @csrf
     @method('PUT')
     <td>
-        <input name="name" class="border-0 fst-italic" type="text" value="{{ $type->name }}">
+        <input name="name" class="border-0 fst-italic" type="text" value="{{ $technology->name }}">
     </td>
     <td>
         <button class="btn btn-warning" type="submit">

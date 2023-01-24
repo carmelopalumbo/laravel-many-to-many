@@ -11,5 +11,5 @@
         {!! session('create') !!}
     </div>
 @else
-    <h3 class="text-center fw-bold py-4">GESTISCI I TIPI DI PROGETTO PRESENTI NEL DB</h3>
+    <h3 class="text-center fw-bold py-4">GESTISCI I LINGUAGGI ED I FRAMEWORK PRESENTI NEL DB</h3>
 @endif

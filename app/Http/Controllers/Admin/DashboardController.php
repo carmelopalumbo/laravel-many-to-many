@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use App\Models\Technology;
 use App\Models\Type;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,8 @@ class DashboardController extends Controller
     {
         $projects = Project::count();
         $types = Type::count();
-        return view('admin.home', compact('projects', 'types'));
+        $technologies = Technology::count();
+        return view('admin.home', compact('projects', 'types', 'technologies'));
     }
 
     public function settings()
