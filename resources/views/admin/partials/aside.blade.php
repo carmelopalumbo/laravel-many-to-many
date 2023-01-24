@@ -10,7 +10,7 @@
         </div>
 
         <div>
-            <a class="{{ Route::currentRouteName() === 'admin.projects.index' ? 'active' : 'notactive' }}"
+            <a class="@if (str_contains(Request::path(), 'admin/projects')) active @else notactive @endif"
                 href="{{ route('admin.projects.index') }}">
                 <i class="fa-solid fa-code fs-6 pe-2"></i>
                 <span>PROGETTI</span>
@@ -26,7 +26,11 @@
         </div>
 
         <div>
-            <a class="{{ Route::currentRouteName() === 'admin.settings' ? 'active' : 'notactive' }}"
+            <a class="@if (Request::path() === 'admin/settings' ||
+                    Request::path() === 'admin/types' ||
+                    Request::path() === 'admin/technologies') active
+                @else
+                notactive @endif"
                 href="{{ route('admin.settings') }}">
                 <i class="fa-solid fa-gear fs-6 pe-2"></i>
                 <span>GESTISCI</span>

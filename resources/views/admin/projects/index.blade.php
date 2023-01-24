@@ -15,11 +15,11 @@
                     <thead>
                         <tr>
                             <th scope="col">
-                                <a class="{{ $direction === 'desc' ? 'desc' : 'asc' }}"
+                                <a class="@if (Request::path() === 'admin/projects/orderby/name/desc') desc @elseif (Request::path() === 'admin/projects/orderby/name/asc') asc @endif"
                                     href="{{ route('admin.orderby', ['name', $direction]) }}">NOME</a>
                             </th>
                             <th scope="col">
-                                <a class="{{ $direction === 'desc' ? 'desc' : 'asc' }}"
+                                <a class="@if (Request::path() === 'admin/projects/orderby/client_name/desc') desc @elseif (Request::path() === 'admin/projects/orderby/client_name/asc') asc @endif"
                                     href="{{ route('admin.orderby', ['client_name', $direction]) }}">CLIENTE</a>
                             </th>
                             <th scope="col">
