@@ -18,4 +18,9 @@ class DashboardController extends Controller
         $types = Type::count();
         return view('admin.home', compact('projects', 'types'));
     }
+
+    public function settings()
+    {
+        return view('admin.settings');
+    }
 }

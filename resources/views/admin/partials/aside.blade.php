@@ -26,8 +26,8 @@
         </div>
 
         <div>
-            <a class="{{ Route::currentRouteName() === 'admin.types.index' ? 'active' : 'notactive' }}"
-                href="{{ route('admin.types.index') }}">
+            <a class="{{ Route::currentRouteName() === 'admin.settings' ? 'active' : 'notactive' }}"
+                href="{{ route('admin.settings') }}">
                 <i class="fa-solid fa-gear fs-6 pe-2"></i>
                 <span>GESTISCI</span>
             </a>
