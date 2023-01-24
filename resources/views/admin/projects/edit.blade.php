@@ -6,7 +6,7 @@
             @include('admin.partials.aside')
 
             <div class="col-10">
-                <h5 class="text-center pt-4 pb-3 fw-bold">MODIFICA PROGETTO</h5>
+                <h5 class="text-center pt-4 pb-3 fw-bold fst-italic">MODIFICA PROGETTO</h5>
                 <form class="w-75 m-auto" action="{{ route('admin.projects.update', $project) }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf

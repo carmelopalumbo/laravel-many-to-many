@@ -36,7 +36,7 @@
                         </div>
                     @endif
 
-                    <p class="w-75 m-auto text-center py-3">{!! $project->summary !!}</p>
+                    <div class="w-75 m-auto text-center py-3">{!! $project->summary !!}</div>
                     <div class="d-flex justify-content-center py-3">
                         <a href="{{ route('admin.projects.edit', $project) }}"
                             class="btn btn-warning mx-3 fw-bold">MODIFICA</a>

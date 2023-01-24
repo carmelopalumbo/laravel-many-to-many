@@ -5,7 +5,7 @@
         <div class="row">
             @include('admin.partials.aside')
             <div class="col-10">
-                <h5 class="text-center pt-4 pb-3 fw-bold">AGGIUNGI NUOVO PROGETTO</h5>
+                <h5 class="text-center pt-4 pb-3 fw-bold fst-italic">AGGIUNGI NUOVO PROGETTO</h5>
 
                 <form class="w-75 m-auto" action="{{ route('admin.projects.store') }}" method="POST"
                     enctype="multipart/form-data">

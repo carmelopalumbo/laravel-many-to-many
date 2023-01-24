@@ -11,5 +11,5 @@
         {!! session('delete') !!}
     </div>
 @else
-    <h3 class="text-center py-4 fw-bold">I MIEI PROGETTI</h3>
+    <h3 class="text-center py-4 fw-bold fst-italic">PROGETTI SALVATI NEL DB</h3>
 @endif

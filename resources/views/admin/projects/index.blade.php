@@ -23,7 +23,7 @@
                                     href="{{ route('admin.orderby', ['client_name', $direction]) }}">CLIENTE</a>
                             </th>
                             <th scope="col">
-                                TAGS
+                                TECNOLOGIE
                             </th>
                             <th scope="col">AZIONI</th>
                         </tr>
@@ -31,10 +31,10 @@
                     <tbody>
                         @forelse ($my_projects as $project)
                             <tr>
-                                <td>{{ $project->name }} <span
+                                <td class="fst-italic">{{ $project->name }} <span
                                         class="badge text-bg-dark ms-2">{{ $project->type?->name }}</span>
                                 </td>
-                                <td>{{ $project->client_name }}</td>
+                                <td class="fst-italic">{{ $project->client_name }}</td>
                                 <td>
                                     @forelse ($project->technologies as $technology)
                                         <span class="badge rounded-pill text-bg-info">{{ $technology->name }}</span>

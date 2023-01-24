@@ -5,7 +5,7 @@
         <div class="row">
             @include('admin.partials.aside')
             <div class="col-10">
-                <h3 class="text-center fw-bold py-4">LINGUAGGI</h3>
+                <h3 class="text-center fw-bold py-4">TIPI DI PROGETTO</h3>
                 <div class="d-flex justify-content-between flex-wrap">
                     @foreach ($types as $type)
                         <div class="type-box">
