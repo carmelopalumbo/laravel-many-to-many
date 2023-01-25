@@ -46,5 +46,5 @@
 @endsection
 
 @section('title')
-    Gestisci Linguaggi
+    Gestisci Tipi di Progetto
 @endsection

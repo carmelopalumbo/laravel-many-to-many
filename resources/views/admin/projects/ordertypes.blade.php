@@ -27,5 +27,5 @@
 @endsection
 
 @section('title')
-    Linguaggi
+    Progetti per tipo
 @endsection
