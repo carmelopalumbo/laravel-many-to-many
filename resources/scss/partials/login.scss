@@ -1,0 +1,28 @@
+.login-page{
+    background-color: #212529;
+    height: 100vh;
+    width: 100%;
+    .card{
+        border: 2px solid #C52133;
+    }
+    label, .card-header{
+        color: #C52133;
+    }
+    input:focus{
+        border-color: #C52133;
+        box-shadow: none;
+    }
+    img{
+        width: 300px;
+    }
+    button{
+        background-color: #C52133;
+        color: white;
+        -webkit-text-stroke: 1px #212529;
+        font-size: 1.1rem;
+        &:hover{
+            background-color: lighten(#C52133, 7%);
+            color: white;
+        }
+    }
+}

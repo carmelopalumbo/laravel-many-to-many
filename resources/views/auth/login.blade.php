@@ -1,11 +1,27 @@
-@extends('layouts.admin')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-    <div class="container mt-4">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ Vite::asset('resources/image/faviconadmin.png') }}" type="image/x-icon">
+
+    <!-- Vite -->
+    @vite(['resources/js/app.js'])
+
+    <title>CP Login</title>
+</head>
+
+<body class="login-page">
+    <div class="container mt-4 bg-dark">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-8 d-flex flex-column">
+                <img src="{{ Vite::asset('resources/image/logo.png') }}" alt="logo" class="align-self-center">
                 <div class="card">
-                    <div class="card-header">{{ __('Login') }}</div>
+                    <div class="card-header fw-bold text-center fs-5">ADMIN AREA</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
@@ -13,7 +29,7 @@
 
                             <div class="mb-4 row">
                                 <label for="email"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                    class="col-md-4 col-form-label text-md-right fw-bold">E-Mail</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email"
@@ -30,7 +46,7 @@
 
                             <div class="mb-4 row">
                                 <label for="password"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                    class="col-md-4 col-form-label text-md-right fw-bold">Password</label>
 
                                 <div class="col-md-6">
                                     <input id="password" type="password"
@@ -51,24 +67,18 @@
                                         <input class="form-check-input" type="checkbox" name="remember" id="remember"
                                             {{ old('remember') ? 'checked' : '' }}>
 
-                                        <label class="form-check-label" for="remember">
-                                            {{ __('Remember Me') }}
+                                        <label class="form-check-label fst-italic" for="remember">
+                                            Ricordami
                                         </label>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="mb-4 row mb-0">
-                                <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Login') }}
+                                <div class="col-md-8 d-flex justify-content-center w-100">
+                                    <button type="submit" class="btn fw-bold">
+                                        LOGIN
                                     </button>
-
-                                    @if (Route::has('password.request'))
-                                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                                            {{ __('Forgot Your Password?') }}
-                                        </a>
-                                    @endif
                                 </div>
                             </div>
                         </form>
@@ -77,4 +87,7 @@
             </div>
         </div>
     </div>
-@endsection
+
+</body>
+
+</html>
