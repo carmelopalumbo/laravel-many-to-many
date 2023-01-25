@@ -2,10 +2,8 @@
     <header>
         <nav class="navbar navbar-expand navbar-light bg-dark shadow-sm">
             <div class="container-fluid mx-1">
-                <a class="navbar-brand d-flex align-items-center text-white" href="{{ url('/') }}">
-                    <div class="fw-bold">
-                        <img class="my-logo" src="{{ Vite::asset('resources/image/logo.png') }}" alt="">
-                    </div>
+                <a class="navbar-brand d-flex align-items-center" href="{{ route('admin.dashboard') }}">
+                    <img class="my-logo" src="{{ Vite::asset('resources/image/logo.png') }}" alt="logo">
                 </a>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
